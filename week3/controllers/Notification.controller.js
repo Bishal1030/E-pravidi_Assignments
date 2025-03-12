@@ -2,7 +2,7 @@ const Product = require("../models/Product.js");
 const ReorderNotification = require("../models/ReorderNotification.js");
 
 // Fetching all products or only low stock products
-const getProducts = async (req, res) => {
+const getLowStockProducts = async (req, res) => {
   const { lowStock } = req.query; // /products?lowStock=true
   const reorderLevel = 3;
 
@@ -54,4 +54,4 @@ const getNotification = async (req, res) => {
   }
 };
 
-module.exports = { getProducts };
+module.exports = { getLowStockProducts, getNotification };
